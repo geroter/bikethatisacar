@@ -1,0 +1,86 @@
+---
+layout: default
+body_class: activity-page
+---
+{%- assign acts = site.activities | sort: "number" -%}
+{%- assign idx = page.number | minus: 1 -%}
+<article class="activity">
+  <header class="activity-head">
+    <div class="wrap">
+      <p class="crumb"><a href="{{ '/' | relative_url }}#activities">All activities</a></p>
+      <div class="head-row">
+        <span class="big-num" aria-hidden="true">{{ page.number }}</span>
+        <div>
+          <h1><span class="sr">Activity {{ page.number }}: </span>{{ page.title }}</h1>
+          {% include badges.html doc=page %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {%- if page.content_ready -%}
+  <div class="wrap activity-body">
+    <aside class="glance" aria-label="At a glance">
+      <h2>The activity</h2>
+      <p>{{ page.activity }}</p>
+      {%- for c in page.curriculum %}
+      <h2>Curriculum expectations: {{ c.subject }}</h2>
+      {%- for s in c.strands %}
+      <h3>{{ s.name }}</h3>
+      <ul>
+        {%- for i in s.items %}<li>{{ i }}</li>{% endfor -%}
+      </ul>
+      {%- endfor -%}
+      {%- endfor %}
+      {%- if page.worksheet %}
+      <a class="button" href="{{ page.worksheet.pdf }}">Download the worksheet (PDF)</a>
+      {%- endif %}
+    </aside>
+
+    <div class="prose">
+      {{ content }}
+
+      {%- if page.worksheet %}
+      <section class="worksheet">
+        <h2>Worksheet</h2>
+        <p>{{ page.worksheet.intro }}</p>
+        <figure>
+          <img src="{{ page.worksheet.preview | relative_url }}" alt="{{ page.worksheet.alt }}" loading="lazy">
+        </figure>
+        <a class="button" href="{{ page.worksheet.pdf }}">Download the worksheet (PDF)</a>
+      </section>
+      {%- endif %}
+
+    </div>
+  </div>
+    {%- if page.assessment or page.rubric_sheet %}
+    <section class="assessment wrap">
+      <h2>Success criteria and assessment</h2>
+      {%- if page.assessment %}<div class="prose">{{ page.assessment | markdownify }}</div>{% endif %}
+      {%- if page.rubric_sheet %}
+      <div class="sheet-embed">
+        <iframe src="https://docs.google.com/spreadsheets/d/{{ page.rubric_sheet }}/htmlembed?widget=true&amp;headers=false{% if page.rubric_gid %}&amp;single=true&amp;gid={{ page.rubric_gid }}{% endif %}" title="Success criteria and assessment rubric for Activity {{ page.number }}" loading="lazy"></iframe>
+      </div>
+      <p class="sheet-link"><a href="https://docs.google.com/spreadsheets/d/{{ page.rubric_sheet }}/edit{% if page.rubric_gid %}#gid={{ page.rubric_gid }}{% endif %}">Open the rubric in Google Sheets</a> to make a copy or print it.</p>
+      {%- endif %}
+    </section>
+    {%- endif %}
+  {%- else -%}
+  <div class="wrap activity-body single">
+    <div class="prose">
+      <p class="lead">{{ page.summary }}</p>
+      <p class="note">This activity page hasn't been moved over yet in this preview.</p>
+    </div>
+  </div>
+  {%- endif -%}
+
+  <nav class="pager wrap" aria-label="Other activities">
+    {%- if idx > 0 -%}{%- assign pidx = idx | minus: 1 -%}{%- assign prev = acts[pidx] -%}
+    <a class="prev" href="{{ prev.url | relative_url }}"><span>Previous</span>{{ prev.number }}. {{ prev.title }}</a>
+    {%- else -%}<span></span>{%- endif -%}
+    {%- assign nidx = idx | plus: 1 -%}{%- assign next = acts[nidx] -%}
+    {%- if next -%}
+    <a class="next" href="{{ next.url | relative_url }}"><span>Next</span>{{ next.number }}. {{ next.title }}</a>
+    {%- endif -%}
+  </nav>
+</article>

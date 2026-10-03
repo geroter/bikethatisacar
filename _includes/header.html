@@ -1,0 +1,19 @@
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/aliyah-portrait.jpg' | relative_url }}" alt="" width="40" height="40">
+      <span>The Bike that is a Car</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-icon" aria-hidden="true"></span>Menu
+    </button>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Activities</a></li>
+        <li><a href="{{ '/about-aliyah-and-sari' | relative_url }}"{% if page.url contains "about" %} aria-current="page"{% endif %}>About Aliyah and Sari</a></li>
+        <li><a href="{{ '/the-bike-that-is-a-car' | relative_url }}"{% if page.url == "/the-bike-that-is-a-car" %} aria-current="page"{% endif %}>The Story</a></li>
+        <li><a href="{{ '/feedback-suggestions' | relative_url }}"{% if page.url contains "feedback" %} aria-current="page"{% endif %}>Feedback</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

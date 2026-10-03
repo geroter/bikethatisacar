@@ -1,0 +1,11 @@
+{%- assign doc = include.doc -%}
+<span class="badges">
+  {%- for g in site.grades -%}
+    {%- if doc.grades contains g.key -%}
+    <span class="badge badge-{{ g.key | downcase }}" title="{{ g.name }}"><span aria-hidden="true">{{ g.key }}</span><span class="sr">{{ g.name }}</span></span>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if doc.french -%}
+    <span class="badge badge-fr" title="French resource"><span aria-hidden="true">fr</span><span class="sr">French resource</span></span>
+  {%- endif -%}
+</span>

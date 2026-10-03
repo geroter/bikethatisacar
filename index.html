@@ -1,0 +1,71 @@
+---
+layout: default
+title: Home
+body_class: home
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>The Bike that is a Car</h1>
+      <p class="hero-sub">An activity package for teachers, built around a story by seven-year-old Aliyah Rotman.</p>
+      <div class="hero-actions">
+        <a class="button" href="#activities">Browse the 18 activities</a>
+        <a class="button ghost" href="{{ '/the-bike-that-is-a-car' | relative_url }}">Read and listen to the story</a>
+      </div>
+    </div>
+    <figure class="hero-art">
+      <img src="{{ '/assets/img/aliyah-watercolor.jpg' | relative_url }}" alt="Watercolour portrait of Aliyah smiling, with shoulder-length brown hair, against a pale blue sky." width="1052" height="788">
+    </figure>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap intro-grid">
+    <h2>What is this site?</h2>
+    <div class="intro-text">
+      <p>To share with you and your students a 7-year old kid named Aliyah Rotman; and to give you a way to use Aliyah’s story as a springboard to spark creative writing, inquiry, team work, character development and individual and group accomplishment with your students.</p>
+      <p>In this site are activities designed to engage students of all ages. They are all based on Aliyah's story, “The Bike that is a Car”, which was aired on the award-winning podcast ‘Story Pirates’ in 2022. Activities are linked to the <strong>NEW Ontario Curriculum expectations</strong>, and have possible assessment tools so that including these activities in classroom planning is easy and relevant.</p>
+      <p>Sadly, Aliyah died at age 7 on March 9th 2022. However, her creativity and ideas live on and can help encourage others to create wacky characters and tell meaningful and funny stories.</p>
+      <p>This site and all its content was written by Sari Stillman, an elementary teacher in the Toronto District School Board. She is Aliyah's mom.</p>
+      <p class="intro-links">
+        <a href="{{ '/about-aliyah-and-sari' | relative_url }}">Read about Aliyah and Sari</a>
+        <a href="{{ '/the-bike-that-is-a-car' | relative_url }}">Read or listen to “The Bike that is a Car”</a>
+        <a href="{{ '/feedback-suggestions' | relative_url }}">Share feedback and suggestions</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="activities" id="activities">
+  <div class="wrap">
+    <div class="activities-head">
+      <h2>Activities</h2>
+      <div class="filter" role="group" aria-label="Show activities for">
+        <button type="button" data-filter="all" aria-pressed="true">All grades</button>
+        {%- for g in site.grades %}
+        <button type="button" data-filter="{{ g.key }}" aria-pressed="false"><span class="badge badge-{{ g.key | downcase }}" aria-hidden="true">{{ g.key }}</span>{{ g.name }}</button>
+        {%- endfor %}
+        <button type="button" data-filter="fr" aria-pressed="false"><span class="badge badge-fr" aria-hidden="true">fr</span>French resource</button>
+      </div>
+    </div>
+    <p class="filter-status" aria-live="polite"></p>
+
+    <ol class="activity-list">
+      {%- assign acts = site.activities | sort: "number" -%}
+      {%- for a in acts %}
+      <li class="activity-item" data-grades="{{ a.grades | join: ' ' }}{% if a.french %} fr{% endif %}">
+        <a href="{{ a.url | relative_url }}">
+          <span class="num" aria-hidden="true">{{ a.number }}</span>
+          <span class="item-body">
+            <span class="item-title"><span class="sr">Activity {{ a.number }}: </span>{{ a.title }}</span>
+            <span class="item-summary">{{ a.summary }}</span>
+          </span>
+          {% include badges.html doc=a %}
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+
