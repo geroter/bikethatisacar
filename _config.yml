@@ -1,7 +1,7 @@
 title: "The Bike that is a Car"
 description: "Classroom activities built around Aliyah Rotman's story, linked to the Ontario curriculum."
 url: "https://www.bikethatisacar.ca"
-baseurl: "/bikethatisacar"   # set back to "" when the domain moves over
+baseurl: ""
 author: Sari Stillman
 contact_email: sari.stillman@gmail.com
 feedback_form: "https://docs.google.com/forms/d/e/1FAIpQLScuB4BEr1U01WZak3R-CDerBGltdGSo2e081EDnrrY84OKjIQ/viewform"
