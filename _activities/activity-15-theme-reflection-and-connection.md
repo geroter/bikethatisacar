@@ -28,7 +28,7 @@ assessment: "As this assignment is done in a group, individual assessment can be
 
 ## Possible pre-teaching ideas
 
-- Do activity 12 (creating inspirational quotes).
+- Do activity 14 (creating inspirational quotes).
 - Brainstorm ideas linked to each theme/message.
 - Understand what the theme actually means. We use these words, but do the students know what they mean? Create a definition for the words/themes/messages.
   - What is perseverance?

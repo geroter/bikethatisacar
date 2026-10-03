@@ -9,7 +9,7 @@ activity: "Students will use the shape of a bicycle to discuss grade appropriate
 curriculum:
   - subject: Math
     strands:
-      - name: Stand E- Spatial Sense
+      - name: Strand E- Spatial Sense
         items:
           - E1. describe and represent shape, location, and movement by applying geometric properties and spatial relationships in order to navigate the world around them
           - E2. compare, estimate, and determine measurements in various contexts

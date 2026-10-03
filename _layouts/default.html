@@ -18,7 +18,7 @@
   <a class="skip" href="#main">Skip to content</a>
   {% include header.html %}
   <main id="main">
-    {{ content }}
+    {{ content | replace: ' href="http', ' target="_blank" rel="noopener" href="http' }}
   </main>
   {% include footer.html %}
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
