@@ -20,7 +20,7 @@ The top of each file, between the `---` lines, holds the details the site uses f
 | `content_ready` | `true` once the full activity page is written |
 | `activity` | One-line description in the side panel |
 | `curriculum` | Curriculum expectations in the side panel |
-| `worksheet` | Worksheet preview image and PDF link |
+| `worksheets` | Worksheets, exit cards and handouts: each has a `title`, an optional `intro`, either an `image` preview or a Google Doc `doc` ID (shown as a live preview), a `pdf` link, and `placement: assessment` to show it under Success criteria |
 | `assessment` | Success criteria text |
 | `rubric_sheet` / `rubric_gid` | Google Sheet ID (and tab) for an embedded rubric |
 

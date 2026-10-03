@@ -28,6 +28,7 @@ curriculum:
         items:
           - Devises and follows a plan and process for completing work and tasks
 rubric_sheet: 1i5cfXYHMPPqGH3o-m0nFnrRYCZ5X0jfzeIsx5yJWjQg
+rubric_gid: 0
 ---
 
 ## Possible pre-teaching ideas
@@ -71,9 +72,9 @@ For younger grades, students can also be given a part of the story and they have
 </div>
 
 <figure class="template-figure">
-  <img src="{{ '/assets/img/activity-2-comic-cell-template.jpg' | relative_url }}" alt="Single comic cell template: a large empty panel with a speech bubble and a caption strip along the top." width="768" height="789" loading="lazy">
+  <img src="{{ '/assets/img/activity-2-comic-cell-template.png' | relative_url }}" alt="Single comic cell template: a large empty panel with a speech bubble and a caption strip along the top." width="768" height="789" loading="lazy">
   <figcaption>
     <span>Possible single-cell template</span>
-    <a class="button small" href="{{ '/assets/img/activity-2-comic-cell-template.jpg' | relative_url }}" download>Download the template</a>
+    <a class="button small" href="{{ '/assets/img/activity-2-comic-cell-template.png' | relative_url }}" download>Download the template</a>
   </figcaption>
 </figure>

@@ -32,31 +32,32 @@ body_class: activity-page
       </ul>
       {%- endfor -%}
       {%- endfor %}
-      {%- if page.worksheet %}
-      <a class="button" href="{{ page.worksheet.pdf }}">Download the worksheet (PDF)</a>
+      {%- assign pdfs = page.worksheets | where_exp: "w", "w.pdf" -%}
+      {%- if pdfs.size > 0 %}
+      <h2>Downloads</h2>
+      <ul class="downloads">
+        {%- for w in pdfs %}<li><a href="{{ w.pdf }}">{{ w.title }}</a> <span>PDF</span></li>{% endfor -%}
+      </ul>
       {%- endif %}
     </aside>
 
     <div class="prose">
       {{ content }}
 
-      {%- if page.worksheet %}
-      <section class="worksheet">
-        <h2>Worksheet</h2>
-        <p>{{ page.worksheet.intro }}</p>
-        <figure>
-          <img src="{{ page.worksheet.preview | relative_url }}" alt="{{ page.worksheet.alt }}" loading="lazy">
-        </figure>
-        <a class="button" href="{{ page.worksheet.pdf }}">Download the worksheet (PDF)</a>
-      </section>
+      {%- assign body_ws = page.worksheets | where_exp: "w", "w.placement != 'assessment'" -%}
+      {%- if body_ws.size > 0 %}
+      <h2>{{ page.worksheets_heading | default: "Activity" }}</h2>
+      {%- for w in body_ws %}{% include worksheet.html w=w %}{% endfor -%}
       {%- endif %}
 
     </div>
   </div>
-    {%- if page.assessment or page.rubric_sheet %}
+    {%- assign assess_ws = page.worksheets | where: "placement", "assessment" -%}
+    {%- if page.assessment or page.rubric_sheet or assess_ws.size > 0 %}
     <section class="assessment wrap">
       <h2>Success criteria and assessment</h2>
       {%- if page.assessment %}<div class="prose">{{ page.assessment | markdownify }}</div>{% endif %}
+      {%- if assess_ws.size > 0 %}<div class="assess-worksheets">{% for w in assess_ws %}{% include worksheet.html w=w %}{% endfor %}</div>{% endif %}
       {%- if page.rubric_sheet %}
       <div class="sheet-embed">
         <iframe src="https://docs.google.com/spreadsheets/d/{{ page.rubric_sheet }}/htmlembed?widget=true&amp;headers=false{% if page.rubric_gid %}&amp;single=true&amp;gid={{ page.rubric_gid }}{% endif %}" title="Success criteria and assessment rubric for Activity {{ page.number }}" loading="lazy"></iframe>
@@ -69,7 +70,6 @@ body_class: activity-page
   <div class="wrap activity-body single">
     <div class="prose">
       <p class="lead">{{ page.summary }}</p>
-      <p class="note">This activity page hasn't been moved over yet in this preview.</p>
     </div>
   </div>
   {%- endif -%}

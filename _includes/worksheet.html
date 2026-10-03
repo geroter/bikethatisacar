@@ -1,0 +1,17 @@
+{%- assign w = include.w -%}
+<section class="worksheet">
+  <h3>{{ w.title }}</h3>
+  {%- if w.intro %}{{ w.intro | markdownify }}{% endif %}
+  {%- if w.image %}
+  <figure>
+    <img src="{{ w.image | relative_url }}" alt="{{ w.alt | escape }}" loading="lazy">
+  </figure>
+  {%- elsif w.doc %}
+  <div class="doc-embed">
+    <iframe src="https://docs.google.com/document/d/{{ w.doc }}/preview" title="Preview of {{ w.title | escape }}" loading="lazy"></iframe>
+  </div>
+  {%- endif %}
+  {%- if w.pdf %}
+  <a class="button" href="{{ w.pdf }}">Download the PDF</a>
+  {%- endif %}
+</section>

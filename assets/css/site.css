@@ -200,6 +200,24 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.15; m
 .pager a span { font-family: var(--text); font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 0.2rem; }
 .pager .next { text-align: right; margin-left: auto; }
 
+/* Worksheets */
+.worksheet { margin: 0 0 2rem; }
+.worksheet h3 { font-size: 1.3rem; margin: 0 0 0.4rem; }
+.worksheet p { margin: 0 0 0.75rem; }
+.doc-embed { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--white); margin: 0.75rem 0 1rem; }
+.doc-embed iframe { display: block; width: 100%; height: 34rem; border: 0; }
+.assess-worksheets { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 0 2.5rem; margin-top: 1.5rem; }
+.glance .downloads { list-style: none; padding: 0; margin: 0.25rem 0 0; }
+.glance .downloads li { display: flex; justify-content: space-between; gap: 0.75rem; padding: 0.45rem 0; border-top: 1px solid var(--line); font-size: 0.95rem; }
+.glance .downloads li:first-child { border-top: 0; }
+.glance .downloads a { font-weight: 600; }
+.glance .downloads span { color: var(--ink-soft); font-size: 0.8rem; }
+.prose table { border-collapse: collapse; width: 100%; margin: 0.75rem 0 1.5rem; font-size: 0.95rem; }
+.prose th, .prose td { border: 1px solid var(--line); padding: 0.45rem 0.6rem; text-align: left; }
+.prose thead th { background: var(--violet-tint); }
+.table-scroll { overflow-x: auto; }
+.blank { display: inline-block; width: 10rem; max-width: 40%; border-bottom: 1px solid currentColor; vertical-align: baseline; margin-right: 0.75rem; }
+
 /* Activity extras */
 .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0.5rem 2rem; margin: 1.5rem 0; padding: 1.25rem 1.4rem; background: var(--white); border: 1px solid var(--line); border-radius: 6px; }
 .resource-grid h3 { font-size: 1.15rem; color: var(--violet-deep); margin: 0 0 0.4rem; }
@@ -260,6 +278,24 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.15; m
   .activity-item a:hover { background: var(--white); }
   .activity-item a:hover .item-title { color: var(--violet-deep); text-decoration: underline; text-underline-offset: 0.18em; }
 }
+
+/* Story */
+.story-wrap { padding-block: clamp(2rem, 5vw, 3.5rem); display: grid; gap: 2.5rem; }
+.story-origin { max-width: 40rem; }
+.story-origin h2 { font-size: 1.6rem; }
+.story-text { background: var(--white); max-width: 44rem; padding: clamp(1.5rem, 5vw, 3rem); border-radius: 4px; box-shadow: 0 20px 40px -28px rgba(31, 26, 43, 0.5); }
+.story-text h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--violet-deep); margin-bottom: 0.2rem; }
+.story-text .byline { color: var(--ink-soft); margin: 0 0 1.5rem; font-style: italic; }
+.story-text p:last-child { font-size: 1.1rem; line-height: 1.85; margin: 0; }
+
+/* Feedback */
+.feedback-wrap { padding-block: clamp(2rem, 5vw, 3.5rem); }
+.feedback-intro { margin-bottom: 1.5rem; }
+.form-embed { max-width: 48rem; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--white); }
+.form-embed iframe { display: block; width: 100%; height: 70rem; border: 0; }
+.form-link { font-size: 0.95rem; }
+
+.button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 /* Footer */
 .site-footer { background: var(--ink); color: #d8d3e3; padding: 2.25rem 0; font-size: 0.95rem; }

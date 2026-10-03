@@ -16,11 +16,12 @@ curriculum:
         items:
           - B3.2 Grammar
           - B3.3 Capitalization and Punctuation
-worksheet:
-  intro: "A preview of the Mad Lib activity is below."
-  preview: /assets/img/activity-3-madlibs-preview.jpg
-  alt: "Preview of the Mad Libs worksheet: the opening of the story with blanks labelled noun (place) and noun (thing)."
-  pdf: "https://docs.google.com/document/d/1zG6bnK2tu1xPCyfHQSX2avjjispRvh4u-3fqMFirxCQ/export?format=pdf"
+worksheets:
+  - title: Mad Libs worksheet
+    intro: "A preview of the Mad Lib activity is below."
+    image: /assets/img/activity-3-madlibs-preview.png
+    alt: "Preview of the Mad Libs worksheet: the opening of the story with blanks labelled noun (place) and noun (thing)."
+    pdf: "https://docs.google.com/document/d/1zG6bnK2tu1xPCyfHQSX2avjjispRvh4u-3fqMFirxCQ/export?format=pdf"
 assessment: "Because student responses will vary greatly, assessment will be anecdotal and a quick visual assessment ensuring answers filled in make sense. However, student answers can be scored correct or incorrect as well if they substituted the missing word with the correct grammar needed. This will hopefully get a few laughs from your students."
 ---
 
